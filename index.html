@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="ja" manifest="tonjiru.manifest">
+<head>
+    <meta charset="UTF-8">
+    <title>豚汁二郎のお会計</title>
+    <link rel="stylesheet" href="tonjiru.css">
+</head>
+<body>
+    <div>
+        <h1>豚汁二郎のお会計</h1>
+        <div>
+            <label for="product_300">ふつう(¥<span id="price_300">300</span>): </label>
+            <div class="input-container1">
+                <button onclick="decreaseCount('product_300')">-</button>
+                <input type="number" id="product_300" value="0">
+                <button onclick="increaseCount('product_300')">+</button>
+                <button onclick="changePrice('price_300', 50)">+50</button>
+                <button onclick="changePrice('price_300', -50)">-50</button>
+            </div>
+        </div>
+        <div>
+            <label for="product_350">マシ(¥<span id="price_350">350</span>): </label>
+            <div class="input-container2">
+                <button onclick="decreaseCount('product_350')">-</button>
+                <input type="number" id="product_350" value="0">
+                <button onclick="increaseCount('product_350')">+</button>
+                <button onclick="changePrice('price_350', 50)">+50</button>
+                <button onclick="changePrice('price_350', -50)">-50</button>
+            </div>
+        </div>
+        <div>
+            <label for="product_400"><span class="small-text">マシマシ</span>(¥<span id="price_400">400</span>): </label>
+            <div class="input-container3">
+                <button onclick="decreaseCount('product_400')">-</button>
+                <input type="number" id="product_400" value="0">
+                <button onclick="increaseCount('product_400')">+</button>
+                <button onclick="changePrice('price_400', 50)">+50</button>
+                <button onclick="changePrice('price_400', -50)">-50</button>
+            </div>
+        </div>
+        <h2>合計金額: <span id="total_amount">0</span>円</h2>
+        <button onclick="calculateTotal()">合計金額を計算</button>
+        <h2>売り上げ合計: <span id="total_sales">0</span>円</h2>
+        <!-- 個数の累計を表示する部分 -->
+        <h2>ふつう合計: <span id="total_normal_count">0</span></h2>
+        <h2>マシ合計: <span id="total_mashi_count">0</span></h2>
+        <h2>マシマシ合計: <span id="total_mashimashi_count">0</span></h2>  
+    </div>
+     <!-- 修正金額の入力と確定ボタン -->
+    <div class="adjustment-container">
+        <label for="adjustment_amount">修正金額: </label>
+        <input type="number" id="adjustment_amount" value="0">
+        <button onclick="applyAdjustment()">修正を確定</button>
+    </div>
+    <script src="app.js"></script>
+</body>
+</html>
